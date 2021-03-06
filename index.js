@@ -30,6 +30,6 @@
 
     function playCountdownSound(mutationrecordsPopup) {
         const cntDown = +mutationrecordsPopup[0]?.target?.innerText.replace(/:/, '')
-        if (cntDown === 4) audioBeep.play()
+        if (cntDown === 3) setTimeout(()=>audioBeep.play(), 400)
     }
 })()
