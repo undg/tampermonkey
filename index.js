@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  add countdown sound for the last 3 sec.
 // @author       undg
-// @match        https://play.typeracer.com/
+// @match        https://play.typeracer.com/*
 // ==/UserScript==
 
 ;(function () {
