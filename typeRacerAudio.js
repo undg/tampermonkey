@@ -35,24 +35,24 @@
 
     titleElement.appendChild(volElement)
 
-    const config = {
+    const observerConfig = {
         childList: true,
     }
 
     new MutationObserver((mutationrecordsBody) => {
         const timeNode = mutationrecordsBody[0]?.addedNodes[0]?.querySelector('.popupContent .time')
-        if (timeNode) observeTimePopup(timeNode, config)
-    }).observe(body, config)
+        if (timeNode) observeTimePopup(timeNode, observerConfig)
+    }).observe(body, observerConfig)
 
-    function observeTimePopup(timeNode, config) {
+    function observeTimePopup(timeNode, observerConfig) {
         const PopupObserver = new MutationObserver(playCountdownSound)
-        PopupObserver.observe(timeNode, config)
+        PopupObserver.observe(timeNode, observerConfig)
     }
 
     function playCountdownSound(mutationrecordsPopup) {
         const cntDown = +mutationrecordsPopup[0]?.target?.innerText.replace(/:/, '')
         setAudio(audioBeep)
-        if (cntDown === 3) setTimeout(()=>audioBeep.play(), 400)
+        if (cntDown === 3) setTimeout(()=>audioBeep.play(), 100)
     }
 
     /*
@@ -66,26 +66,27 @@
 
     /*
      * @param {(number|string|undefined)} volume
+     * @return {string}
      */
 
     function volumeText(volume) {
         volume = +volume
+        
         if(volume === 0)
-            return "🔇 "
-        if(volume > 0)
-            return "🔈 " + volume.toString() + "0%"
-        if(volume > 4)
-            return "🔉 " + volume.toString() + "0%"
-        if(volume > 7)
-            return "🔊 " + volume.toString() + "0%"
-        if(volume === 10)
+            return "🔇 MUTE"
+        else if(volume === 10)
             return "🔊 MAX"
+        else if(volume > 6)
+            return "🔊 " + volume.toString() + "0%"
+        else if(volume > 3)
+            return "🔉 " + volume.toString() + "0%"
+        else if(volume > 0)
+            return "🔈 " + volume.toString() + "0%"
         return "🔊 " + volume.toString() + "0%"
     }
 
     /*
      * @param {WheelEvent} event
-     * 
      * @return void
      */
     function volChange(event) {
