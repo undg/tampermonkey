@@ -10,6 +10,7 @@
 ;(function () {
     'use strict'
 
+    const delayFix = 300
     const body = document.querySelector('body')
 
     const audioBeep = new Audio('https://github.com/undg/typeRacerAudio/raw/slave/assets/typeracer.wav')
@@ -52,7 +53,7 @@
     function playCountdownSound(mutationrecordsPopup) {
         const cntDown = +mutationrecordsPopup[0]?.target?.innerText.replace(/:/, '')
         setAudio(audioBeep)
-        if (cntDown === 3) setTimeout(()=>audioBeep.play(), 100)
+        if (cntDown === 3) setTimeout(()=>audioBeep.play(), delayFix)
     }
 
     /*
