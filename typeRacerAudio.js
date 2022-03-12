@@ -10,7 +10,10 @@
 ;(function () {
     'use strict'
 
-    const delayFix = 300
+    const delayFix = 400
+    const timeNodeSelector = '.popupContent .time'
+
+
     const body = document.querySelector('body')
 
     const audioBeep = new Audio('https://github.com/undg/typeRacerAudio/raw/slave/assets/typeracer.wav')
@@ -41,7 +44,7 @@
     }
 
     new MutationObserver((mutationrecordsBody) => {
-        const timeNode = mutationrecordsBody[0]?.addedNodes[0]?.querySelector('.popupContent .time')
+        const timeNode = mutationrecordsBody[0]?.addedNodes[0]?.querySelector(timeNodeSelector)
         if (timeNode) observeTimePopup(timeNode, observerConfig)
     }).observe(body, observerConfig)
 
