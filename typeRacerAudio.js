@@ -10,7 +10,7 @@
 ;(function () {
     'use strict'
 
-    const delayFix = 400
+    const delayFix = 375
     const timeNodeSelector = '.popupContent .time'
 
 
