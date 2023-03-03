@@ -1,0 +1,22 @@
+{
+  "name": "tampermonkey",
+  "version": "1.0.0",
+  "description": "1. Enable access to file system for browser plugin (manage extensions -> Allow access to file URLs) 2. Use only header in plugin script editor with `@require` and `@match` rules.     ```javascript     // ==UserScript==     // @name         typeRacerSound     // @namespace    http://tampermonkey.net/     // @version      0.1     // @description  add countdown sound for the last 3 sec.     // @author       undg     // @match        https://play.typeracer.com/*     // @require      file:////home/undg/Code/tampermonkey/typeRacerAudio.js     // ==/UserScript==     ```",
+  "main": "airtable-copy-branch-name.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undg/tampermonkey.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/undg/tampermonkey/issues"
+  },
+  "homepage": "https://github.com/undg/tampermonkey#readme",
+  "devDependencies": {
+    "eslint": "^8.35.0"
+  }
+}
