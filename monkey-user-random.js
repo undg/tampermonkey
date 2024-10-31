@@ -36,7 +36,7 @@ function getRandomLink(xmlString) {
 (function () {
   "use strict";
   // @TODO (undg) 2024-01-30: replace with something interesting for this half a seccond flash
-  document.body.style.opacity = '0'
+  document.body.style.opacity = '0.9'
 
   window.location.href = getRandomLink(getRssXmlString());
 })();
